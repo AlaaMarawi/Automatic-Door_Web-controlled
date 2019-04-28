@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+	<style>
+
+	title{ left:200px; }
+	body  { background: #eceaea; }
+	h3 {margin-left: 20px; margin-top: 20px;
+	}
+	
+}
+
+
+.cerceve{
+	position: absolute; 
+    left: 10px;
+    top: 30px
+}
+
+.sayi{
+	position: absolute; 
+	top:230px; 
+	left:150px;
+}
+
+.sayi2{
+	position: absolute; 
+	top:230px; 
+	left:260px;
+}
+.sayi3{
+	position: absolute; 
+	top:230px; 
+	left:370px;
+}
+.sayi4{
+	position: absolute; 
+	top:330px; 
+	left:150px;
+}
+.sayi5{
+	position: absolute; 
+	top:330px; 
+	left:260px;
+}
+.sayi6{
+	position: absolute; 
+	top:330px; 
+	left:370px;
+}
+.sayi7{
+	position: absolute; 
+	top:430px; 
+	left:150px;
+}
+.sayi8{
+	position: absolute; 
+	top:430px; 
+	left:260px;
+}
+.sayi9{
+	position: absolute; 
+	top:430px; 
+	left:370px;
+}
+.sayi0{
+	position: absolute; 
+	top:530px; 
+	left:260px;
+}
+.geri{
+	position: absolute; 
+	top:530px; 
+	left:150px;
+}
+.giris{
+	position: absolute; 
+	top:530px; 
+	left:370px;
+}
+
+</style>
+<h3 id=title>OTOMATİK KAPI</h3>
+
+Kişi sayısı: <input type="text" name="kisiSayisi" ><br><br>
+
+<div class ="kapi" id="kapi"></div>
+
+
+<div class = "cerceve"><img src = "cerceve2.png" id = "cerceve" width="600px" height="570px" >
+	<div class="sayi"> <input type="image"  src="1.png" onclick="deger(1);"width="100px" height="100px"></div>
+	<div class="sayi2"> <input type="image"  src="2.png" onclick="deger(2);" width="100px" height="100px"></div>
+	<div class="sayi3"> <input type="image"  src="3.png" onclick="deger(3);" width="102px" height="102px"></div>
+	<div class="sayi4"> <input type="image"  src="4.png" onclick="deger(4);" width="100px" height="100px"></div>
+	<div class="sayi5"> <input type="image"  src="5.png" onclick="deger(5);" width="100px" height="100px"></div>
+	<div class="sayi6"> <input type="image"  src="6.png" onclick="deger(6);" width="100px" height="100px"></div>
+	<div class="sayi7"> <input type="image"  src="7.png" onclick="deger(7);" width="100px" height="100px"></div>
+	<div class="sayi8"> <input type="image"  src="8.png" onclick="deger(8);" width="100px" height="100px"></div>
+	<div class="sayi9"> <input type="image"  src="9.png"onclick="deger(9);" width="100px" height="100px"></div>
+	<div class="sayi0"> <input type="image"  src="0.png" onclick="deger(0);"width="100px" height="100px"></div>
+	<div class="geri"> <input type="image"  src="sil.png" onclick="sil();" width="100px" height="100px"></div>
+	<div class="giris"> <input type="image"  src="giris.png" onclick="giris();" width="100px" height="100px" ></div>
+</div>
+
+
+<script type="text/javascript">
+	var dizi=[]
+	var string=""
+	
+	function deger(sayi){
+
+		dizi.push(sayi)
+		string=dizi.join('')
+		
+
+		
+	}
+	function sil(){
+		dizi.pop()
+	
+    }
+    function giris(){
+		if(dizi.length==0){ //hiç bir sayıya basılmadan giriş butonuna basıldıysa
+			alert("Lütfen bir şifre giriniz.");
+		}
+		else{ 
+         	console.log(string) // bu kısım degisecek
+			dizi=[] //giris butonuna basıldıktan sonra diziyi boşalttım
+			string="" 
+		}
+
+	}
+	//kapiDurumu="CLOSED"
+	kapiDurumu="OPEN"
+	if(kapiDurumu == "CLOSED"){
+		document.getElementById('kapi').innerHTML = "Kapı Durumu :"+" <img id='closed' src='closed.png' style='position: absolute left:100px 'width=200px height=55px>"; 
+				
+
+	}
+	else if(kapiDurumu == "OPEN"){
+		document.getElementById('kapi').innerHTML = "Kapı Durumu :"+" <img id='open' src='open.png' style='position: absolute left:100px'width=200px height=55px>"; 
+
+	}
+
+</script>
+</body>
+</html>
