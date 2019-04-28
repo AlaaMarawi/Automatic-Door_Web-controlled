@@ -1,4 +1,6 @@
 # kapiProjesi
 Network 2. proje
-<li>
-<a href= "https://beyzakoser.github.io/kapiProjesi/network/arayuz.html"></a>Arayuz</li>
+
+
+<li><strong>Arayuz</strong>
+<a href= "https://beyzakoser.github.io/kapiProjesi/network/arayuz.html">Arayüz</a></li>
