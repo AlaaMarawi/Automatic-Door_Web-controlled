@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head >
+<div  id="yenile">
+ <meta id="meta" http-equiv="refresh" content="1">
+</div>
+     
+</head>
+<style>
+    title{ left:200px; }
+    body  { background: #f1f0f0 }
+             h3 {margin-left: 20px; margin-top: 20px;
+    }         
+    .kapi{
+        position: absolute;
+        left: 30px;
+        top:50px
+    }
+    .kisiSayisi{
+        position: absolute;
+        left: 30px;
+        top:100px
+    }
+    .zil{
+        position: absolute;
+        left: 50px;
+        top:160px
+    }
+    .openDoor{
+        position: absolute;
+        left: 10px;
+        top:230px
+   }
+}
+ 
+</style>
+<h3 id=title>OTOMATİK KAPI</h3>
+<div class ="kapi" id="kapi"></div>
+<h2 id="durum">Kapı Durumu: {{ durum }}</h2>
+
+<div id="counter">Kişi Sayısı : {{ counter }}</div>
+
+<div class ="zil" id="zil" >{{zilDurumu}}</div>
+ 
+<div class ="openDoor" id="openDoor"><input type="image"  src="static/open4.png" onclick="openDoor()" width="200px" height="190px"></div>
+ 
+<script type="text/javascript">
+    
+if(window.location.pathname=='/opendoor'){
+    window.location.href = '/yonetici';
+    }
+    var zilDurumu=Number(document.getElementById('zil').innerHTML)
+    if(zilDurumu == 0){ //kapalı
+        document.getElementById('zil').innerHTML = " <img src='static/kapali.png' style='position: absolute left:100px 'width=100px height=100px>";
+    } else if(zilDurumu == 1){
+        document.getElementById('zil').innerHTML = " <img  src='static/acik2.png' style='position: absolute left:100px 'width=100px height=100px>";
+        window.stop();
+    }
+    
+
+            
+    function openDoor(){
+        document.getElementById('durum').innerHTML="Kapı durumu : açık"
+        window.location.href = '/opendoor';
+    }
+
+        
+</script>
+</body>
+</html>
