@@ -11,11 +11,11 @@ Network 2nd project
 <li><strong>door manager interface</strong>
 <a href= "https://alaamarawi.github.io/Automatic-Door_Web-controlled/cs-v7/yonetim.html">UI</a></li>
 <li><strong>run http server</strong>
-<a href= "https://alaamarawi.github.io/Automatic-Door_Web-controlled/cs-v7/app.py">UI</a></li>
+<a href= "https://alaamarawi.github.io/Automatic-Door_Web-controlled/cs-v7/app.py">Download</a></li>
 <li><strong>Report_EN</strong>
-<a href= "https://alaamarawi.github.io/Automatic-Door_Web-controlled/Report_EN.pdf">UI</a></li>
+<a href= "https://alaamarawi.github.io/Automatic-Door_Web-controlled/Report_EN.pdf">Download</a></li>
 <li><strong>Report_TR</strong>
-<a href= "https://alaamarawi.github.io/Automatic-Door_Web-controlled/Report_TR.pdf">UI</a></li>
+<a href= "https://alaamarawi.github.io/Automatic-Door_Web-controlled/Report_TR.pdf">Download</a></li>
 
 
 
