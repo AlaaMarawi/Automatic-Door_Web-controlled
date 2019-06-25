@@ -1,7 +1,7 @@
 # Web controlled Sliding door Project
 Network 2nd project
-* http server with Flask (Python Modul+html+css+JS)
-* Paltform : Raspberry Pi
+* http server with Flask Modul (Python+html+css+JS)
+* Platform : Raspberry Pi
 * Correct password or pressing the button with approvement from manager, opens the door.
 * videos and details in the Report.
 
