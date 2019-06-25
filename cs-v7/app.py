@@ -5,7 +5,7 @@ import time
 app = Flask(__name__)
 GPIO.setmode(GPIO.BCM)
 
-sifre = "123"
+password = "123"
 counter = "0"
 
 enable_pin = 18
@@ -42,7 +42,7 @@ GPIO.output(18, GPIO.LOW)
 def main():
    # Put the pin dictionary into the template data dictionary:
    templateData = {
-      'sifre' : sifre
+      'password' : password
     }
    # Pass the template data into the template main.html and return it to the user
    return render_template('keypad.html', **templateData)
@@ -52,15 +52,15 @@ def main2():
     try:
         GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         if GPIO.input(18) == True:
-            zilDurumu = 0
+            BellStat = 0
         else:
-            zilDurumu = 1
+            BellStat = 1
     except:
-        zilDurumu = -1
+        BellStat = -1
 
     templateData = {
-        'zilDurumu':zilDurumu,
-        'durum' : 'kapalı',
+        'BellStat':BellStat,
+        'Stat' : 'closed',
         'counter' : counter
     }
    # Pass the template data into the template main.html and return it to the user
@@ -72,7 +72,7 @@ def openuser():
     counter = int(counter) + 1
     forward(int(3) / 1000.0, int(200)) 
     templateData = {
-        'sifre' : sifre
+        'password' : password
     }
     backwards(int(3) / 1000.0, int(200))
 
@@ -84,7 +84,7 @@ def open():
     counter = int(counter) + 1
     forward(int(3) / 1000.0, int(200)) 
     templateData = {
-        'durum' : 'kapalı',
+        'Stat' : 'closed',
         'counter' : counter
     }
     backwards(int(3) / 1000.0, int(200))

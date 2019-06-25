@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head >
-<div  id="yenile">
+<div  id="refresh">
  <meta id="meta" http-equiv="refresh" content="1">
 </div>
      
@@ -21,7 +21,7 @@
         left: 30px;
         top:100px
     }
-    .zil{
+    .Bell{
         position: absolute;
         left: 50px;
         top:160px
@@ -34,14 +34,19 @@
 }
  
 </style>
-<h3 id=title>OTOMATİK KAPI</h3>
+<h1 id=title>Automatic Door</h1>
 <div class ="kapi" id="kapi"></div>
-<h2 id="durum">Kapı Durumu: {{ durum }}</h2>
+<h2 id="statu">Door statu: {{ stat }}</h2>
 
-<div id="counter">Kişi Sayısı : {{ counter }}</div>
+<div id="counter">Peroson Counter : {{ counter }}</div>
 
-<div class ="zil" id="zil" >{{zilDurumu}}</div>
- 
+<!--
+<div class ="Bell" id="Bell" >{{BellStat}}</div>
+ -->  
+ <div class ="Bell" id="Bell" >
+     <img src='static/kapali.png' style='position: absolute left:100px 'width=100px height=100px>
+ </div>
+
 <div class ="openDoor" id="openDoor"><input type="image"  src="static/open4.png" onclick="openDoor()" width="200px" height="190px"></div>
  
 <script type="text/javascript">
@@ -49,18 +54,18 @@
 if(window.location.pathname=='/opendoor'){
     window.location.href = '/yonetici';
     }
-    var zilDurumu=Number(document.getElementById('zil').innerHTML)
-    if(zilDurumu == 0){ //kapalı
-        document.getElementById('zil').innerHTML = " <img src='static/kapali.png' style='position: absolute left:100px 'width=100px height=100px>";
-    } else if(zilDurumu == 1){
-        document.getElementById('zil').innerHTML = " <img  src='static/acik2.png' style='position: absolute left:100px 'width=100px height=100px>";
+    var BellStat=Number(document.getElementById('Bell').innerHTML)
+    if(BellStat == 0){ //close
+        document.getElementById('Bell').innerHTML = " <img src='static/kapali.png' style='position: absolute left:100px 'width=100px height=100px>";
+    } else if(BellStat == 1){
+        document.getElementById('Bell').innerHTML = " <img  src='static/acik2.png' style='position: absolute left:100px 'width=100px height=100px>";
         window.stop();
     }
     
 
             
     function openDoor(){
-        document.getElementById('durum').innerHTML="Kapı durumu : açık"
+        document.getElementById('statu').innerHTML="Door statu : open"
         window.location.href = '/opendoor';
     }
 

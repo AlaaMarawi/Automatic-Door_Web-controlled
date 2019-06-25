@@ -71,16 +71,16 @@
     top:500px;
     left:370px;
 }
-.sifre{
+.password{
     position: absolute;
     left: 30px;
     top: 30px
 }
  
 </style>
-<h3 id=title>OTOMATİK KAPI</h3>
+<h1 id=title>Automatic Door</h1>
  
-<input type="text" name="sifre" id="sifre" style="position: absolute;left:210px; top:80px">
+<input type="text" name="password" id="password" style="position: absolute;left:210px; top:80px">
 <br><br>
  
 <div class = "cerceve"><img src = "static/cerceve2.png" id = "cerceve" width="600px" height="610px" >
@@ -97,7 +97,7 @@
              <div class="geri"> <input type="image"  src="static/sil.png" onclick="sil();" width="100px" height="100px"></div>
              <div class="giris"> <input type="image"  src="static/giris.png" onclick="giris();" width="100px" height="100px" ></div>
 </div>
-<div ><input id="gelenSifre" type="hidden" value={{sifre}}></div>
+<div ><input id="comingPass" type="hidden" value={{password}}></div>
 <script type="text/javascript">
 
 if(window.location.pathname=='/opendooruser'){
@@ -105,33 +105,33 @@ if(window.location.pathname=='/opendooruser'){
     }
     var dizi=[]
     var string=""
-    var gelen= document.getElementById('gelenSifre').value;
+    var recieved= document.getElementById('comingPass').value;
    
     function deger(sayi){
         dizi.push(sayi)
         string=dizi.join('')
-        sifre.value+=sayi
+        password.value+=sayi
     }
     function sil(){
         dizi.pop()
         string=dizi.join('')
-        sifre.value=string         
+        password.value=string         
     }
 	    
 function giris(){
-    if(dizi.length==0){ //hiç bir sayıya basılmadan giriş butonuna basıldıysa
-        alert("Lütfen bir şifre giriniz.");
-    } else if (string!=gelen){ 
-        alert("yanlış şifre girildi");
-        dizi=[]; //giris butonuna basıldıktan sonra diziyi boşalttım
+    if(dizi.length==0){
+        alert("Pleas enter a password.");
+    } else if (string!=recieved){ 
+        alert("Wrong password was entered");
+        dizi=[];
         string=""; 
     }else{
-        console.log(string); // bu kısım degisecek
+        console.log(string); 
         window.location.href = '/opendooruser';
-        dizi=[]; //giris butonuna basıldıktan sonra diziyi boşalttım
+        dizi=[]; 
         string="";                         
     }
-    sifre.value=""
+    password.value=""
 }
  
 </script>
